@@ -4,96 +4,104 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carta · Antigua Plaza · Restaurante Chino · Palma</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Serif+SC:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Noto+Serif+SC:wght@400;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--red:#CC2020;--red2:#E83030;--gold:#D4A820;--gold2:#F0C840;--black:#0A0A0A;--black2:#141414;--off:#1A1A1A;--cream:#F5F0E8;--muted:rgba(245,240,232,0.5);--border:rgba(212,168,32,0.2)}
+:root{
+  --jade:#0F4C3A;--jade2:#1B6E54;--jade-light:#E4EFE9;
+  --terra:#D9603B;--terra2:#E97A52;
+  --paper:#F7F1E3;--paper2:#EFE6D2;
+  --ink:#2A2620;--muted:#7A7468;--gold:#C9A24A;
+  --border:rgba(15,76,58,0.12);
+}
 html,body{overflow-x:hidden;width:100%;scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--black);color:var(--cream)}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");opacity:0.5;mix-blend-mode:overlay}
+body{font-family:'Poppins',sans-serif;background:var(--paper);color:var(--ink)}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  opacity:0.6;mix-blend-mode:multiply}
 
-.nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;background:rgba(10,10,10,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem}
-.nav-logo{font-family:'Noto Serif SC',serif;font-size:1.1rem;font-weight:600;color:var(--gold2);text-decoration:none;letter-spacing:3px}
-.nav-back{font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .2s}
-.nav-back:hover{color:var(--gold2)}
-.ham{display:none;background:none;border:1px solid var(--border);color:var(--gold2);width:38px;height:38px;cursor:pointer;font-size:0.9rem;align-items:center;justify-content:center;flex-shrink:0}
-.mob-menu{display:none;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(10,10,10,0.99);padding:1.5rem 2rem 2rem;z-index:199;border-bottom:1px solid var(--border)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;height:76px;background:rgba(247,241,227,0.95);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;font-style:italic;color:var(--jade);text-decoration:none;letter-spacing:1px}
+.nav-back{font-size:0.78rem;font-weight:500;letter-spacing:1px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:8px;padding:0.55rem 1.2rem;border-radius:30px;border:1px solid var(--border);transition:all .2s}
+.nav-back:hover{background:var(--jade-light);border-color:var(--jade)}
+.ham{display:none;background:none;border:1.5px solid var(--jade);color:var(--jade);width:40px;height:40px;border-radius:10px;cursor:pointer;font-size:0.9rem;align-items:center;justify-content:center;flex-shrink:0}
+.mob-menu{display:none;flex-direction:column;position:fixed;top:76px;left:0;right:0;background:var(--paper);padding:1rem 1.5rem 1.5rem;z-index:199;border-bottom:1px solid var(--border);box-shadow:0 10px 30px rgba(15,76,58,0.08)}
 .mob-menu.open{display:flex}
-.mob-menu a{font-size:0.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:0.8rem 0;border-bottom:1px solid rgba(212,168,32,0.1)}
-@media(max-width:768px){.nav{padding:0 1.2rem}.ham{display:flex!important}}
+.mob-menu a{font-size:0.85rem;font-weight:500;letter-spacing:1px;color:var(--ink);text-decoration:none;padding:0.85rem 0.5rem;border-bottom:1px solid var(--border)}
+@media(max-width:900px){.nav{padding:0 1.2rem}.ham{display:flex!important}}
 
 /* PAGE HEADER */
-.ph{padding:9rem 0 4rem;position:relative;overflow:hidden;background:var(--black)}
-.ph-bg{position:absolute;inset:0;background:url('https://images.pexels.com/photos/2347311/pexels-photo-2347311.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover;filter:brightness(0.12) saturate(0.4)}
-.ph-deco{position:absolute;right:3%;top:50%;transform:translateY(-50%);font-family:'Noto Serif SC',serif;font-size:clamp(8rem,18vw,20rem);font-weight:600;color:rgba(212,168,32,0.04);letter-spacing:-5px;line-height:1;pointer-events:none}
+.ph{padding:9rem 0 4rem;position:relative;overflow:hidden;background:var(--jade)}
+.ph-bg{position:absolute;inset:0;background:url('https://images.pexels.com/photos/2347311/pexels-photo-2347311.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover;filter:brightness(0.3) saturate(0.6);mix-blend-mode:overlay;opacity:0.5}
+.ph-deco{position:absolute;right:3%;top:50%;transform:translateY(-50%);font-family:'Noto Serif SC',serif;font-size:clamp(8rem,18vw,20rem);font-weight:600;color:rgba(255,255,255,0.05);line-height:1;pointer-events:none}
 .ph-content{position:relative;z-index:2;max-width:1260px;margin:0 auto;padding:0 2.5rem}
-.ph-label{font-size:0.6rem;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;display:flex;align-items:center;gap:10px}
-.ph-label::before{content:'';display:block;width:20px;height:1px;background:var(--gold)}
-.ph-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,9vw,9rem);color:var(--cream);letter-spacing:4px;line-height:0.88}
-.ph-title span{color:var(--gold2)}
-.ph-sub{font-family:'Noto Serif SC',serif;font-style:italic;font-size:1rem;color:var(--muted);margin-top:0.8rem;font-weight:300}
+.ph-label{font-size:0.7rem;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;display:flex;align-items:center;gap:10px}
+.ph-label::before{content:'';display:block;width:24px;height:2px;background:var(--gold);border-radius:2px}
+.ph-title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(3rem,8vw,6rem);color:#fff;line-height:1.05}
+.ph-title em{font-style:italic;color:var(--terra2)}
+.ph-sub{font-size:0.95rem;color:rgba(255,255,255,0.75);margin-top:0.8rem;font-weight:300}
 
-/* TICKER */
-.ticker{overflow:hidden;background:var(--red);padding:0.65rem 0}
-.tk{display:flex;width:max-content;animation:tk 22s linear infinite}
-.ti{font-size:0.62rem;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.85);white-space:nowrap;padding:0 2.5rem;display:flex;align-items:center;gap:2rem}
-.ti::after{content:'★';font-size:0.5rem;opacity:0.4}
+/* BADGE STRIP */
+.strip{background:var(--terra);padding:0.85rem 0;overflow:hidden}
+.strip-tk{display:flex;width:max-content;animation:tk 24s linear infinite}
+.strip-i{font-size:0.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#fff;white-space:nowrap;padding:0 2.2rem;display:flex;align-items:center;gap:1.4rem}
+.strip-i i{color:var(--paper)}
 @keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* LAYOUT */
-.carta-layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 68px)}
-.sidebar{background:var(--black2);border-right:1px solid var(--border);padding:2.5rem 0;position:sticky;top:68px;height:calc(100vh - 68px);overflow-y:auto}
-.sidebar-title{font-size:0.56rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);padding:0 1.8rem;margin-bottom:1.5rem}
-.sidebar-nav a{display:flex;align-items:center;gap:10px;padding:0.75rem 1.8rem;font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;border-left:2px solid transparent;transition:all .2s}
-.sidebar-nav a:hover,.sidebar-nav a.active{color:var(--gold2);border-left-color:var(--gold);background:rgba(212,168,32,0.05)}
-.sidebar-nav a i{width:14px;font-size:0.7rem;color:var(--gold);flex-shrink:0}
-.sidebar-zh{display:block;font-family:'Noto Serif SC',serif;font-size:0.58rem;opacity:0.3;letter-spacing:1px;margin-top:2px}
-@media(max-width:860px){.carta-layout{grid-template-columns:1fr}.sidebar{display:none}}
+.carta-layout{display:grid;grid-template-columns:240px 1fr;min-height:calc(100vh - 76px)}
+.sidebar{background:var(--paper2);border-right:1px solid var(--border);padding:2.5rem 0;position:sticky;top:76px;height:calc(100vh - 76px);overflow-y:auto}
+.sidebar-title{font-size:0.62rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--terra);padding:0 1.8rem;margin-bottom:1.5rem}
+.sidebar-nav a{display:flex;align-items:center;gap:12px;padding:0.8rem 1.8rem;font-size:0.78rem;font-weight:500;color:var(--ink);text-decoration:none;border-left:3px solid transparent;transition:all .2s}
+.sidebar-nav a:hover,.sidebar-nav a.active{color:var(--jade);border-left-color:var(--jade);background:var(--jade-light)}
+.sidebar-nav a i{width:16px;font-size:0.85rem;color:var(--terra);flex-shrink:0}
+.sidebar-zh{display:block;font-family:'Noto Serif SC',serif;font-size:0.62rem;color:var(--muted);margin-top:2px}
+@media(max-width:900px){.carta-layout{grid-template-columns:1fr}.sidebar{display:none}}
 
-.carta-content{padding:4rem 3rem;background:var(--black)}
+.carta-content{padding:4rem 3rem;background:var(--paper)}
 @media(max-width:600px){.carta-content{padding:2.5rem 1rem}}
 
 .cat-section{margin-bottom:5rem}
-.cat-header{display:flex;align-items:center;gap:2rem;margin-bottom:2.5rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border)}
-.cat-icon{font-size:2rem;flex-shrink:0}
-.cat-zh{font-family:'Noto Serif SC',serif;font-size:0.7rem;color:var(--gold);letter-spacing:3px;margin-bottom:0.3rem;opacity:0.6}
-.cat-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--cream);letter-spacing:2px}
-.cat-desc{font-size:0.75rem;color:var(--muted);margin-top:0.2rem}
+.cat-header{display:flex;align-items:center;gap:1.6rem;margin-bottom:2.2rem;padding-bottom:1.2rem;border-bottom:2px solid var(--jade-light)}
+.cat-icon{width:54px;height:54px;border-radius:14px;background:var(--jade-light);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0}
+.cat-zh{font-family:'Noto Serif SC',serif;font-size:0.78rem;color:var(--terra);letter-spacing:2px;margin-bottom:0.2rem}
+.cat-title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:2.2rem;color:var(--jade);letter-spacing:0.5px}
+.cat-desc{font-size:0.8rem;color:var(--muted);margin-top:0.2rem}
 
 /* ITEMS */
 .menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:0}
-.mi{display:flex;justify-content:space-between;align-items:baseline;padding:0.9rem 0;border-bottom:1px solid rgba(212,168,32,0.08);gap:1rem;transition:background .2s}
-.mi:hover{background:rgba(212,168,32,0.04);margin:0 -0.5rem;padding:0.9rem 0.5rem}
+.mi{display:flex;justify-content:space-between;align-items:baseline;padding:0.95rem 0;border-bottom:1px dashed var(--border);gap:1rem;transition:all .2s}
+.mi:hover{background:var(--jade-light);margin:0 -0.6rem;padding:0.95rem 0.6rem;border-radius:10px;border-bottom-color:transparent}
 .mi:last-child{border-bottom:none}
 .mi-left{flex:1}
-.mi-name{font-family:'Noto Serif SC',serif;font-size:0.95rem;color:var(--cream);letter-spacing:0.5px;margin-bottom:0.12rem}
-.mi-desc{font-size:0.72rem;color:var(--muted);line-height:1.4}
-.mi-price{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--gold2);white-space:nowrap;flex-shrink:0;letter-spacing:1px}
+.mi-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.08rem;color:var(--ink);letter-spacing:0.3px;margin-bottom:0.12rem}
+.mi-desc{font-size:0.75rem;color:var(--muted);line-height:1.5}
+.mi-price{font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:1.15rem;color:var(--terra);white-space:nowrap;flex-shrink:0;letter-spacing:0.5px}
 
 /* FEATURED */
-.mi-featured{display:flex;justify-content:space-between;align-items:center;padding:1.5rem;margin-bottom:0.5rem;gap:1.5rem;background:rgba(204,32,32,0.08);border:1px solid rgba(204,32,32,0.2)}
-.mf-badge{font-size:0.52rem;letter-spacing:3px;text-transform:uppercase;color:var(--red2);margin-bottom:0.4rem}
-.mf-name{font-family:'Noto Serif SC',serif;font-size:1.2rem;color:var(--cream)}
-.mf-desc{font-size:0.75rem;color:var(--muted);margin-top:0.2rem}
-.mf-price{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--gold2);white-space:nowrap;flex-shrink:0}
+.mi-featured{display:flex;justify-content:space-between;align-items:center;padding:1.6rem;margin-bottom:0.5rem;gap:1.5rem;background:var(--jade);border-radius:18px;box-shadow:0 12px 30px rgba(15,76,58,0.18)}
+.mf-badge{font-size:0.6rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem}
+.mf-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.35rem;color:#fff}
+.mf-desc{font-size:0.8rem;color:rgba(255,255,255,0.7);margin-top:0.2rem}
+.mf-price{font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:1.7rem;color:var(--terra2);white-space:nowrap;flex-shrink:0}
 @media(max-width:500px){.mi-featured{flex-direction:column;align-items:flex-start}}
 
 /* MENÚS ESPECIALES */
-.menus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);margin-top:1rem}
-.menu-card{background:var(--off);padding:2rem;transition:background .2s}
-.menu-card:hover{background:var(--black2)}
-.mc-personas{font-size:0.58rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
-.mc-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#fff;letter-spacing:1px;margin-bottom:0.5rem}
-.mc-price{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--red2);margin-bottom:1rem}
-.mc-includes{font-size:0.78rem;color:var(--muted);line-height:1.8}
-.mc-includes li{list-style:none;display:flex;align-items:center;gap:6px}
-.mc-includes li::before{content:'·';color:var(--gold);font-size:1rem}
-@media(max-width:600px){.menus-grid{grid-template-columns:1fr}}
+.menus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:1rem}
+.menu-card{background:#fff;padding:2rem;border-radius:18px;box-shadow:0 8px 26px rgba(15,76,58,0.06);border:1px solid var(--border);transition:all .25s}
+.menu-card:hover{box-shadow:0 16px 40px rgba(217,96,59,0.12);border-color:var(--terra);transform:translateY(-3px)}
+.mc-personas{font-size:0.62rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--terra);margin-bottom:0.5rem}
+.mc-title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:2rem;color:var(--jade);letter-spacing:0.5px;margin-bottom:0.5rem}
+.mc-price{font-family:'Cormorant Garamond',serif;font-weight:600;font-style:italic;font-size:2.4rem;color:var(--terra);margin-bottom:1rem}
+.mc-includes{font-size:0.82rem;color:var(--muted);line-height:1.9}
+.mc-includes li{list-style:none;display:flex;align-items:center;gap:8px}
+.mc-includes li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+@media(max-width:680px){.menus-grid{grid-template-columns:1fr}}
 
-.nota{font-family:'Noto Serif SC',serif;font-style:italic;font-size:0.75rem;color:rgba(245,240,232,0.2);text-align:center;padding:2rem;border-top:1px solid var(--border);margin-top:3rem;letter-spacing:0.5px}
+.nota{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.95rem;color:var(--muted);text-align:center;padding:2.5rem;border-top:1px solid var(--border);margin-top:3rem;letter-spacing:0.3px}
 
-.fab-top{position:fixed;bottom:2rem;right:2rem;z-index:300;width:48px;height:48px;background:var(--red);color:#fff;display:none;align-items:center;justify-content:center;font-size:0.85rem;cursor:pointer;border:none;box-shadow:0 4px 20px rgba(204,32,32,0.4);transition:transform .2s}
+.fab-top{position:fixed;bottom:2rem;right:2rem;z-index:300;width:50px;height:50px;background:var(--terra);color:#fff;display:none;align-items:center;justify-content:center;font-size:0.9rem;cursor:pointer;border:none;border-radius:50%;box-shadow:0 8px 24px rgba(217,96,59,0.4);transition:transform .2s}
 .fab-top.show{display:flex}
 .fab-top:hover{transform:scale(1.08)}
 </style>
@@ -101,7 +109,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 <body>
 
 <nav class="nav">
-  <a href="antiguaplaza-index.html" class="nav-logo">古 ANTIGUA PLAZA</a>
+  <a href="antiguaplaza-index.html" class="nav-logo">Antigua Plaza</a>
   <a href="antiguaplaza-index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
   <button class="ham" onclick="toggleMob()"><i class="fas fa-bars"></i></button>
 </nav>
@@ -120,14 +128,14 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
   <div class="ph-deco">菜单</div>
   <div class="ph-content">
     <div class="ph-label">Cocina China Auténtica</div>
-    <div class="ph-title">CARTA<span> COMPLETA</span></div>
+    <div class="ph-title">Carta <em>completa</em></div>
     <p class="ph-sub">Camí de Son Rapinya 48, Palma · Para llevar disponible</p>
   </div>
 </div>
 
-<div class="ticker"><div class="tk">
-  <div class="ti">Entrantes</div><div class="ti">Sopas</div><div class="ti">Arroces</div><div class="ti">Carnes</div><div class="ti">Marisco</div><div class="ti">Menús especiales</div><div class="ti">Para llevar</div>
-  <div class="ti">Entrantes</div><div class="ti">Sopas</div><div class="ti">Arroces</div><div class="ti">Carnes</div><div class="ti">Marisco</div><div class="ti">Menús especiales</div><div class="ti">Para llevar</div>
+<div class="strip"><div class="strip-tk">
+  <div class="strip-i"><i class="fas fa-leaf"></i> Entrantes</div><div class="strip-i"><i class="fas fa-bowl-rice"></i> Sopas</div><div class="strip-i"><i class="fas fa-seedling"></i> Arroces</div><div class="strip-i"><i class="fas fa-fire"></i> Carnes</div><div class="strip-i"><i class="fas fa-fish"></i> Marisco</div><div class="strip-i"><i class="fas fa-users"></i> Menús especiales</div><div class="strip-i"><i class="fas fa-motorcycle"></i> Para llevar</div>
+  <div class="strip-i"><i class="fas fa-leaf"></i> Entrantes</div><div class="strip-i"><i class="fas fa-bowl-rice"></i> Sopas</div><div class="strip-i"><i class="fas fa-seedling"></i> Arroces</div><div class="strip-i"><i class="fas fa-fire"></i> Carnes</div><div class="strip-i"><i class="fas fa-fish"></i> Marisco</div><div class="strip-i"><i class="fas fa-users"></i> Menús especiales</div><div class="strip-i"><i class="fas fa-motorcycle"></i> Para llevar</div>
 </div></div>
 
 <div class="carta-layout">
@@ -152,7 +160,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 
     <!-- ENTRANTES -->
     <div class="cat-section" id="entrantes">
-      <div class="cat-header"><div class="cat-icon">🥟</div><div><div class="cat-zh">前菜</div><div class="cat-title">ENTRANTES</div><div class="cat-desc">Para abrir el apetito</div></div></div>
+      <div class="cat-header"><div class="cat-icon">🥟</div><div><div class="cat-zh">前菜</div><div class="cat-title">Entrantes</div><div class="cat-desc">Para abrir el apetito</div></div></div>
       <div class="mi-featured"><div><div class="mf-badge">⭑ Más pedido</div><div class="mf-name">Rollo de Primavera</div><div class="mf-desc">Verduras salteadas y fideos de arroz · Salsa agridulce</div></div><div class="mf-price">2,50€ / ud</div></div>
       <div class="menu-grid">
         <div class="mi"><div class="mi-left"><div class="mi-name">Wonton Frito</div><div class="mi-desc">Masa rellena de gambas y cerdo · Salsa de soja</div></div><div class="mi-price">7,50€</div></div>
@@ -168,7 +176,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 
     <!-- SOPAS -->
     <div class="cat-section" id="sopas">
-      <div class="cat-header"><div class="cat-icon">🍜</div><div><div class="cat-zh">汤</div><div class="cat-title">SOPAS</div><div class="cat-desc">Caldos tradicionales</div></div></div>
+      <div class="cat-header"><div class="cat-icon">🍜</div><div><div class="cat-zh">汤</div><div class="cat-title">Sopas</div><div class="cat-desc">Caldos tradicionales</div></div></div>
       <div class="menu-grid">
         <div class="mi"><div class="mi-left"><div class="mi-name">Sopa de Wonton</div><div class="mi-desc">Caldo de pollo · Empanadillas de gambas</div></div><div class="mi-price">6,50€</div></div>
         <div class="mi"><div class="mi-left"><div class="mi-name">Sopa Agripicante</div><div class="mi-desc">Tofu, setas, bambú · Toque ácido y picante</div></div><div class="mi-price">6,00€</div></div>
@@ -179,7 +187,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 
     <!-- ARROCES Y FIDEOS -->
     <div class="cat-section" id="arroces">
-      <div class="cat-header"><div class="cat-icon">🍚</div><div><div class="cat-zh">米饭 · 面条</div><div class="cat-title">ARROCES Y FIDEOS</div><div class="cat-desc">Salteados al wok</div></div></div>
+      <div class="cat-header"><div class="cat-icon">🍚</div><div><div class="cat-zh">米饭 · 面条</div><div class="cat-title">Arroces y Fideos</div><div class="cat-desc">Salteados al wok</div></div></div>
       <div class="mi-featured"><div><div class="mf-badge">⭑ Clásico</div><div class="mf-name">Arroz Frito Tres Delicias</div><div class="mf-desc">Huevo, jamón, guisantes, zanahoria · Salteado al wok</div></div><div class="mf-price">8,50€</div></div>
       <div class="menu-grid">
         <div class="mi"><div class="mi-left"><div class="mi-name">Arroz Blanco</div></div><div class="mi-price">2,50€</div></div>
@@ -195,7 +203,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 
     <!-- CERDO -->
     <div class="cat-section" id="cerdo">
-      <div class="cat-header"><div class="cat-icon">🥩</div><div><div class="cat-zh">猪肉</div><div class="cat-title">CERDO</div></div></div>
+      <div class="cat-header"><div class="cat-icon">🥩</div><div><div class="cat-zh">猪肉</div><div class="cat-title">Cerdo</div></div></div>
       <div class="menu-grid">
         <div class="mi"><div class="mi-left"><div class="mi-name">Cerdo Agridulce</div><div class="mi-desc">Solomillo, pimiento, piña · Salsa cantonesa</div></div><div class="mi-price">11,90€</div></div>
         <div class="mi"><div class="mi-left"><div class="mi-name">Costillas de Cerdo Agridulce</div><div class="mi-desc">Costillar · Salsa agridulce</div></div><div class="mi-price">12,50€</div></div>
@@ -206,7 +214,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 
     <!-- TERNERA -->
     <div class="cat-section" id="ternera">
-      <div class="cat-header"><div class="cat-icon">🔥</div><div><div class="cat-zh">牛肉</div><div class="cat-title">TERNERA</div></div></div>
+      <div class="cat-header"><div class="cat-icon">🔥</div><div><div class="cat-zh">牛肉</div><div class="cat-title">Ternera</div></div></div>
       <div class="menu-grid">
         <div class="mi"><div class="mi-left"><div class="mi-name">Ternera con Pimientos</div><div class="mi-desc">Wok con pimiento verde y rojo · Salsa de soja</div></div><div class="mi-price">12,00€</div></div>
         <div class="mi"><div class="mi-left"><div class="mi-name">Ternera con Setas y Bambú</div><div class="mi-desc">Verduras orientales · Salsa de ostras</div></div><div class="mi-price">12,00€</div></div>
@@ -217,7 +225,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 
     <!-- POLLO -->
     <div class="cat-section" id="pollo">
-      <div class="cat-header"><div class="cat-icon">⭐</div><div><div class="cat-zh">鸡肉</div><div class="cat-title">POLLO</div></div></div>
+      <div class="cat-header"><div class="cat-icon">⭐</div><div><div class="cat-zh">鸡肉</div><div class="cat-title">Pollo</div></div></div>
       <div class="mi-featured"><div><div class="mf-badge">⭑ Favorito</div><div class="mf-name">Pollo con Almendras</div><div class="mf-desc">Pechuga salteada · Almendras tostadas · Salsa de ostras</div></div><div class="mf-price">11,90€</div></div>
       <div class="menu-grid">
         <div class="mi"><div class="mi-left"><div class="mi-name">Pollo al Limón</div><div class="mi-desc">Rebozado crujiente · Salsa de limón dulce</div></div><div class="mi-price">11,50€</div></div>
@@ -229,7 +237,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 
     <!-- PATO -->
     <div class="cat-section" id="pato">
-      <div class="cat-header"><div class="cat-icon">👑</div><div><div class="cat-zh">鸭肉</div><div class="cat-title">PATO</div><div class="cat-desc">Especialidad de la casa</div></div></div>
+      <div class="cat-header"><div class="cat-icon">👑</div><div><div class="cat-zh">鸭肉</div><div class="cat-title">Pato</div><div class="cat-desc">Especialidad de la casa</div></div></div>
       <div class="mi-featured"><div><div class="mf-badge">⭑ Especialidad</div><div class="mf-name">Pato Pekín</div><div class="mf-desc">Lacado al horno · Crepes, cebolleta, salsa hoisin</div></div><div class="mf-price">18,90€</div></div>
       <div class="menu-grid">
         <div class="mi"><div class="mi-left"><div class="mi-name">Pato Asado</div><div class="mi-desc">Pato asado al horno · Salsa de ciruela</div></div><div class="mi-price">16,50€</div></div>
@@ -239,7 +247,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 
     <!-- MARISCO -->
     <div class="cat-section" id="marisco">
-      <div class="cat-header"><div class="cat-icon">🦞</div><div><div class="cat-zh">海鲜</div><div class="cat-title">MARISCO Y PESCADO</div></div></div>
+      <div class="cat-header"><div class="cat-icon">🦞</div><div><div class="cat-zh">海鲜</div><div class="cat-title">Marisco y Pescado</div></div></div>
       <div class="menu-grid">
         <div class="mi"><div class="mi-left"><div class="mi-name">Gambas con Pimientos</div><div class="mi-desc">Gambas frescas · Pimiento verde y rojo</div></div><div class="mi-price">13,90€</div></div>
         <div class="mi"><div class="mi-left"><div class="mi-name">Gambas con Salsa de Ostras</div><div class="mi-desc">Brócoli · Salsa de ostras</div></div><div class="mi-price">14,50€</div></div>
@@ -251,7 +259,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 
     <!-- VERDURAS -->
     <div class="cat-section" id="verduras">
-      <div class="cat-header"><div class="cat-icon">🥦</div><div><div class="cat-zh">蔬菜</div><div class="cat-title">VERDURAS</div><div class="cat-desc">Opciones vegetarianas</div></div></div>
+      <div class="cat-header"><div class="cat-icon">🥦</div><div><div class="cat-zh">蔬菜</div><div class="cat-title">Verduras</div><div class="cat-desc">Opciones vegetarianas</div></div></div>
       <div class="menu-grid">
         <div class="mi"><div class="mi-left"><div class="mi-name">Tofu con Salsa de Ostras</div><div class="mi-desc">Tofu suave · Setas y cebolleta</div></div><div class="mi-price">9,50€</div></div>
         <div class="mi"><div class="mi-left"><div class="mi-name">Salteado de Verduras</div><div class="mi-desc">Brócoli, zanahoria, bambú, setas</div></div><div class="mi-price">9,00€</div></div>
@@ -262,7 +270,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 
     <!-- POSTRES -->
     <div class="cat-section" id="postres">
-      <div class="cat-header"><div class="cat-icon">🍡</div><div><div class="cat-zh">甜点</div><div class="cat-title">POSTRES</div></div></div>
+      <div class="cat-header"><div class="cat-icon">🍡</div><div><div class="cat-zh">甜点</div><div class="cat-title">Postres</div></div></div>
       <div class="menu-grid">
         <div class="mi"><div class="mi-left"><div class="mi-name">Helado de Té Verde</div><div class="mi-desc">Matcha · Galleta de sésamo</div></div><div class="mi-price">5,00€</div></div>
         <div class="mi"><div class="mi-left"><div class="mi-name">Mochi</div><div class="mi-desc">Pasta de arroz glutinoso · Relleno de fresa</div></div><div class="mi-price">5,50€</div></div>
@@ -273,11 +281,11 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 
     <!-- MENUS ESPECIALES -->
     <div class="cat-section" id="menus">
-      <div class="cat-header"><div class="cat-icon">👥</div><div><div class="cat-zh">套餐</div><div class="cat-title">MENÚS ESPECIALES</div><div class="cat-desc">Todos incluyen pan de gambas</div></div></div>
+      <div class="cat-header"><div class="cat-icon">👥</div><div><div class="cat-zh">套餐</div><div class="cat-title">Menús Especiales</div><div class="cat-desc">Todos incluyen pan de gambas</div></div></div>
       <div class="menus-grid">
         <div class="menu-card">
           <div class="mc-personas">Para 2 personas</div>
-          <div class="mc-title">MENÚ DOS</div>
+          <div class="mc-title">Menú Dos</div>
           <div class="mc-price">22,95€</div>
           <ul class="mc-includes">
             <li>Rollo primavera (2 ud.)</li>
@@ -290,7 +298,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
         </div>
         <div class="menu-card">
           <div class="mc-personas">Para 3 personas</div>
-          <div class="mc-title">MENÚ TRES</div>
+          <div class="mc-title">Menú Tres</div>
           <div class="mc-price">33,95€</div>
           <ul class="mc-includes">
             <li>Rollo primavera (3 ud.)</li>
@@ -304,7 +312,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
         </div>
         <div class="menu-card">
           <div class="mc-personas">Para 4 personas</div>
-          <div class="mc-title">MENÚ CUATRO</div>
+          <div class="mc-title">Menú Cuatro</div>
           <div class="mc-price">41,95€</div>
           <ul class="mc-includes">
             <li>Rollo primavera (4 ud.)</li>
@@ -319,7 +327,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
         </div>
         <div class="menu-card">
           <div class="mc-personas">Para 5 personas</div>
-          <div class="mc-title">MENÚ CINCO</div>
+          <div class="mc-title">Menú Cinco</div>
           <div class="mc-price">50,95€</div>
           <ul class="mc-includes">
             <li>Rollo primavera (5 ud.)</li>
@@ -335,7 +343,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
         </div>
         <div class="menu-card" style="grid-column:1/-1">
           <div class="mc-personas">Para 6 personas</div>
-          <div class="mc-title">MENÚ SEIS</div>
+          <div class="mc-title">Menú Seis</div>
           <div class="mc-price">62,95€</div>
           <ul class="mc-includes" style="columns:2;gap:2rem">
             <li>Rollo primavera (6 ud.)</li>
